@@ -11,28 +11,28 @@ A simple Android app that retrieves data from a JSON file and displays it in a l
 
 Architecture
 ----------------
-## Network
+### Network
 ApiService.kt
 - Responsible for data retrieval from the API.
 ItemRepository.kt
 - Provides a clean API for the ViewModel to fetch and manage data.
 
-## Model
+### Model
 Item.kt
 - Data class that represents an item: id, listId, name.
 ItemGroup.kt
 - Data class that represents a group of items: listId, items.
 
-## ViewModel
+### ViewModel
 ItemViewModel.kt
-- Manages items state for the UI.
-- 
-## View
+- Manages uiState for the ItemsScreen to observe.
+
+### View
 Android Compose Tree
-MainActivity
-- FetchAppTheme
-    - ItemsScreen
-        - ItemGroupListView
-            - LazyColumn of ItemGroupView
-                - ItemGroupHeader
-                - Column of Item
+- MainActivity
+  - FetchAppTheme
+      - ItemsScreen
+          - ItemGroupListView
+              - LazyColumn of ItemGroupView
+                  - ItemGroupHeader
+                  - Column of Item
