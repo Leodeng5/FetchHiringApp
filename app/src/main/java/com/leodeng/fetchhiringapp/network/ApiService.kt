@@ -10,7 +10,7 @@ interface ApiService {
     suspend fun getItems(): List<Item>
 
     companion object {
-        const val BASE_URL = "https://fetch-hiring.s3.amazonaws.com/"
+        private const val BASE_URL = "https://fetch-hiring.s3.amazonaws.com/"
         private val apiService = Retrofit.Builder()
             .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())

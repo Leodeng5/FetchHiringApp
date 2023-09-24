@@ -10,7 +10,7 @@ object ItemUtils {
      * @param items: List of items to be sorted
      * @return List of items sorted by name
      */
-    private fun sortItemsByName(items: List<Item>): List<Item> {
+    fun sortItemsByName(items: List<Item>): List<Item> {
         return items.sortedBy { item -> item.name }
     }
 
