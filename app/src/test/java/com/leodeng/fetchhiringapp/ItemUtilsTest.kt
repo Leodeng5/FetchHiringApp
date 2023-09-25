@@ -5,7 +5,8 @@ import com.leodeng.fetchhiringapp.data.ItemGroup
 import com.leodeng.fetchhiringapp.utils.ItemUtils
 import org.junit.Test
 
-import org.junit.Assert.*
+import org.junit.Assert.assertArrayEquals
+import org.junit.Assert.assertTrue
 
 class ItemUtilsTest {
 

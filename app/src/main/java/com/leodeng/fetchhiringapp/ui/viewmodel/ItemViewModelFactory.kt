@@ -4,10 +4,10 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.createSavedStateHandle
 import androidx.lifecycle.viewmodel.CreationExtras
-import com.leodeng.fetchhiringapp.data.ItemRepository
+import com.leodeng.fetchhiringapp.data.ItemRepositoryInterface
 
 class ItemViewModelFactory(
-    private val itemRepository: ItemRepository)
+    private val itemRepository: ItemRepositoryInterface)
     : ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>, extras: CreationExtras): T {
         if (modelClass.isAssignableFrom(ItemViewModel::class.java))

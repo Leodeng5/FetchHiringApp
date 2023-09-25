@@ -5,7 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.leodeng.fetchhiringapp.data.Item
 import com.leodeng.fetchhiringapp.data.ItemGroup
-import com.leodeng.fetchhiringapp.data.ItemRepository
+import com.leodeng.fetchhiringapp.data.ItemRepositoryInterface
 import com.leodeng.fetchhiringapp.utils.ItemUtils
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.map
@@ -13,7 +13,7 @@ import kotlinx.coroutines.launch
 
 class ItemViewModel(
     private val savedStateHandle: SavedStateHandle,
-    private val itemRepository: ItemRepository
+    private val itemRepository: ItemRepositoryInterface
 ) : ViewModel() {
 
     private val loading: StateFlow<Boolean> = savedStateHandle.getStateFlow("loading", false)
