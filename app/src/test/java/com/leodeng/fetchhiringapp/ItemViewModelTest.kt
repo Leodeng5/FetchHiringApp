@@ -9,34 +9,14 @@ import com.leodeng.fetchhiringapp.ui.viewmodel.ItemViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.test.TestDispatcher
-import kotlinx.coroutines.test.UnconfinedTestDispatcher
-import kotlinx.coroutines.test.resetMain
 import kotlinx.coroutines.test.runTest
-import kotlinx.coroutines.test.setMain
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.junit.Assert.*
-import org.junit.rules.TestWatcher
-import org.junit.runner.Description
 import org.mockito.Mock
 import org.mockito.Mockito
 import org.mockito.MockitoAnnotations.openMocks
-
-@ExperimentalCoroutinesApi
-class MainDispatcherRule(
-    private val dispatcher: TestDispatcher = UnconfinedTestDispatcher()
-) : TestWatcher() {
-    override fun starting(description: Description) {
-        super.starting(description)
-        Dispatchers.setMain(dispatcher)
-    }
-    override fun finished(description: Description) {
-        super.finished(description)
-        Dispatchers.resetMain()
-    }
-}
 
 @OptIn(ExperimentalCoroutinesApi::class)
 class ItemViewModelTest {
