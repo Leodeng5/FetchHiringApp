@@ -26,16 +26,20 @@ ApiService.kt
 ### Model
 Item.kt
 - Data class that represents an item: id, listId, name.
+
 ItemGroup.kt
 - Data class that represents a group of items: listId, items.
+
 ItemRepository.kt
 - Manages retrieval of items from ApiService.
 
 ### ViewModel
 ItemViewModel.kt
 - Manages uiState for the ItemsScreen to observe.
+
 ItemViewModelFactory.kt
 - Handles injection of SavedStateHandle and ItemRepository into ItemViewModel.
+
 ItemUtils.kt
 - Provides helper functions for ItemViewModel to use.
 
