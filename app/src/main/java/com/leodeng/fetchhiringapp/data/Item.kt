@@ -6,7 +6,8 @@ import android.os.Parcelable
 data class Item (
     val id: Int,
     val listId: Int,
-    val name: String?
+    val name: String?,
+//    val points: Int,
 ) : Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readInt(),

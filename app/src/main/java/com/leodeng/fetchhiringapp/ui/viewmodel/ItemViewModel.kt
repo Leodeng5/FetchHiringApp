@@ -8,6 +8,7 @@ import com.leodeng.fetchhiringapp.data.ItemGroup
 import com.leodeng.fetchhiringapp.data.ItemRepositoryInterface
 import com.leodeng.fetchhiringapp.utils.ItemUtils
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
 
@@ -23,8 +24,8 @@ class ItemViewModel(
     private val namedItems = items.map { ItemUtils.filterOutUnnamed(it) }
     private val itemGroups = namedItems.map { ItemUtils.groupItemsByListId(it) }
 
-    val itemGroupsUiState = itemGroups.map {
-        ItemGroupsUiState(loading = loading.value, error = error.value, itemGroups = it)
+    val itemGroupsUiState = combine(loading, error, itemGroups) { loading, error, groups ->
+        ItemGroupsUiState(loading = loading, error = error, itemGroups = groups)
     }
 
     init {

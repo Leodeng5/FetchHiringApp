@@ -29,15 +29,20 @@ fun ItemsScreen(uiState: ItemGroupsUiState) {
     Box(
         Modifier.fillMaxSize()
     ) {
-        Text(
-            "Items",
-            fontSize = 24.sp,
-            modifier = Modifier
+        Column(
+            Modifier
                 .fillMaxWidth()
-                .background(Color.LightGray),
-            textAlign = TextAlign.Center,
-        )
-        ItemGroupListView(uiState.itemGroups)
+        ) {
+            Text(
+                "Items",
+                fontSize = 24.sp,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .background(Color.LightGray),
+                textAlign = TextAlign.Center,
+            )
+            ItemGroupListView(uiState.itemGroups)
+        }
     }
 }
 
